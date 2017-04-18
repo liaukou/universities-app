@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Pagination from 'react-js-pagination';
-import { Grid, Row, Col, Clearfix, PageHeader } from 'react-bootstrap';
+import { Grid, Row, PageHeader } from 'react-bootstrap';
 
 import Filter from './components/filter/Filter';
 import List from './components/content/List';
@@ -15,7 +15,7 @@ import {
     FORM_BUTTON_ID
 } from './constants/App.Constants';
 
-const data = [];
+let data = [];
 
 class App extends Component {
     constructor(props) {
@@ -32,7 +32,7 @@ class App extends Component {
         const config = {
             name: this.state.name,
             country: this.state.country
-        }
+        };
         getData(config).then((json) => {
             data = json;
             this.updateDataToShow();
@@ -77,11 +77,10 @@ class App extends Component {
             <Grid>
                 <Row className="show-grid">
                     <PageHeader>List of Universities</PageHeader>
-                </Row>
-                <Row className="show-grid">
+
                     <Filter handleClick={this.handleClick.bind(this)}/>
                 </Row>
-                 <Row className="show-grid">
+                <Row className="show-grid">
                     <List arr={this.state.dataToShow} />
                 </Row>
                 <Row className="text-center">

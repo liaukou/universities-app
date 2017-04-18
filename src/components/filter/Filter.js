@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Well, Form, FormGroup, FormControl, ControlLabel, Button } from 'react-bootstrap';
 
 // constants
